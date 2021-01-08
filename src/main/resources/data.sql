@@ -1,0 +1,18 @@
+INSERT INTO category (category_Name) VALUES ('American');
+INSERT INTO category (category_Name) VALUES ('Italian');
+INSERT INTO category (category_Name) VALUES ('Mexican');
+INSERT INTO category (category_Name) VALUES ('Fast Food');
+INSERT INTO unit_of_measure (uom) VALUES ('Teaspoon');
+INSERT INTO unit_of_measure (uom) VALUES ('Tablespoon');
+INSERT INTO unit_of_measure (uom) VALUES ('Cup');
+INSERT INTO unit_of_measure (uom) VALUES ('Pint');
+INSERT INTO unit_of_measure (uom) VALUES ('Pinch');
+INSERT INTO unit_of_measure (uom) VALUES ('Ounce');
+INSERT INTO unit_of_measure (uom) VALUES ('Pound');
+INSERT INTO unit_of_measure (uom) VALUES ('Dash');
+INSERT INTO unit_of_measure (uom) VALUES ('Clove');
+INSERT INTO unit_of_measure (uom) VALUES ('Small');
+INSERT INTO unit_of_measure (uom) VALUES ('Medium');
+INSERT INTO unit_of_measure (uom) VALUES ('Large');
+INSERT INTO unit_of_measure (uom) VALUES ('Bowl');
+INSERT INTO unit_of_measure (uom) VALUES ('Each');

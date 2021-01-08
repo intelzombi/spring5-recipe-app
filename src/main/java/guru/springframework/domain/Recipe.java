@@ -9,12 +9,14 @@ public class Recipe {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Lob
     private String description;
     private Integer prepTime;
     private Integer cookTime;
     private Integer servings;
     private String source;
     private String url;
+    @Lob
     private String directions;
 
     @Enumerated(value = EnumType.STRING)
@@ -33,6 +35,7 @@ public class Recipe {
     @JoinTable(name="recipe_category",
             joinColumns = @JoinColumn(name = "recipe_id"),
             inverseJoinColumns = @JoinColumn(name = "category_id"))
+
     private Set<Category> categories = new HashSet<>();
 
     public Long getId() {
@@ -120,6 +123,7 @@ public class Recipe {
     }
 
     public void setNotes(Notes notes) {
+        notes.setRecipe(this);
         this.notes = notes;
     }
 
@@ -131,7 +135,8 @@ public class Recipe {
         this.ingredients = ingredients;
     }
 
-    public void addIngredients(Ingredient ingredient) {
+    public void addIngredient(Ingredient ingredient) {
+        ingredient.setRecipe(this);
         this.ingredients.add(ingredient);
     }
 
@@ -143,7 +148,12 @@ public class Recipe {
         this.categories = category;
     }
 
-    public void addCategory(Category category) {
+    public Category addCategory(Category category) {
+        if(category==null) {
+            throw new RuntimeException("Category cannot be null");
+        }
+        //category.addRecipe(this);
         this.categories.add(category);
+        return category;
     }
 }
