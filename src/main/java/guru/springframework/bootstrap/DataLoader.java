@@ -102,8 +102,7 @@ public class DataLoader implements ApplicationListener<ContextRefreshedEvent> {
                 "Everyone can grab a warm tortilla from the pile and make their own tacos just they way they like them.\n" +
                 "\n" +
                 "You could also easily double or even triple this recipe for a larger party. A taco and a cold beer on a warm day? Now that’s living!\n");
-
-        chickenTaco.setNotes(note);
+//        chickenTaco.setNotes(note);
         chickenTaco.setCookTime(15);
         chickenTaco.setDifficulty(Difficulty.EASY);
         chickenTaco.setDirections("Look for ancho chile powder with the Mexican ingredients at your grocery store, on buy it online. (If you can't find ancho chili powder, you replace the ancho chili, the oregano, and the cumin with 2 1/2 tablespoons regular chili powder, though the flavor won't be quite the same.)\n" +
@@ -183,7 +182,7 @@ public class DataLoader implements ApplicationListener<ContextRefreshedEvent> {
 
         Ingredient lime = new Ingredient("lime, cut into wedges", new BigDecimal(1),unitOfMeasureMap.get("Each").get());
         chickenTaco.addIngredient(lime);
-
+        chickenTaco.setNotes(note);
         return chickenTaco;
 
     }

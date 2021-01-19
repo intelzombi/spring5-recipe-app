@@ -2,12 +2,14 @@ package guru.springframework.domain;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.ToString;
 
 import javax.persistence.*;
 
 @Entity
 @Data
 @EqualsAndHashCode(exclude = {"recipe"})
+@ToString(exclude = {"recipe"})
 public class Notes {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -18,4 +20,5 @@ public class Notes {
 
     @Lob
     private String recipeNotes;
+
 }
